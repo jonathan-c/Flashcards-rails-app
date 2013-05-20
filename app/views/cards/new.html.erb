@@ -1,0 +1,8 @@
+<h2>Create a new card</h2>
+<%= form_for([@deck, @card]) do |form| %>
+	<%= form.label :front, "Front" %>
+	<%= form.text_field :front %>
+	<%= form.label :back, "Back" %>
+	<%= form.text_field :back %>
+	<%= form.submit %>
+<% end %>
