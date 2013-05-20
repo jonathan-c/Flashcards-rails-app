@@ -1,2 +1,7 @@
 <%= link_to "Decks", decks_path %>
 <h2><%= @deck.name %></h2>
+<% @cards.each do |card| %>
+	<div>
+		<%= link_to card.front, [@deck, card] %>
+	</div>
+<% end %>

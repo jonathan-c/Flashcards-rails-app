@@ -7,5 +7,7 @@ Flashy::Application.routes.draw do
   # put "/decks/:id" => 'decks#update'
   # delete "/decks/:id" => 'decks#destroy'
   
-  resources :decks
+  resources :decks do
+    resources :cards, except: :index
+  end
 end
