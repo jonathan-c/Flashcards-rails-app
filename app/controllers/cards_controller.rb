@@ -1,37 +1,48 @@
 class CardsController < ApplicationController
+  
   def new
-    @deck = Deck.find(params[:deck_id])
-    @card = Card.new
+    @deck = find_deck
+    @card = @deck.cards.new
   end
   
   def create
-    @deck = Deck.find(params[:deck_id])
+    @deck = find_deck
     @card = @deck.cards.new(params[:card])
     @card.save
     redirect_to deck_path(@deck)
   end
   
   def show
-    @deck = Deck.find(params[:deck_id])
-    @card = @deck.cards.find(params[:id])
+    @deck = find_deck
+    @card = find_card(@deck)
   end
   
   def edit
-    @deck = Deck.find(params[:deck_id])
-    @card = @deck.cards.find(params[:id])
+    @deck = find_deck
+    @card = find_card(@deck)
   end
   
   def update
-    @deck = Deck.find(params[:deck_id])
-    @card = @deck.cards.find(params[:id])
+    @deck = find_deck
+    @card = find_card(@deck)
     @card.update_attributes(params[:card])
     redirect_to deck_path(@deck)
   end
   
   def destroy
-    @deck = Deck.find(params[:deck_id])
-    @card = @deck.cards.find(params[:id])
+    @deck = find_deck
+    @card = find_card(@deck)
     @card.destroy
     redirect_to deck_path(@deck)
   end
+  
+  private
+  
+    def find_deck
+     Deck.find(params[:deck_id])
+    end
+    
+    def find_card(deck)
+      deck.cards.find(params[:id])
+    end
 end

@@ -1,6 +1,6 @@
-<%= link_to "Back to deck", deck_path(@deck) %>
+<%= link_to "Back to #{@deck.name} deck", deck_path(@deck) %>
 <%= link_to "Edit card", edit_deck_card_path(@deck, @card) %>
 <%= link_to "Delete", deck_card_path(@deck, @card), method: :delete, :confirm => "Are you sure?" %>
-<div>
-	<%= @card.front %>
-</div>
+
+<div><%= @card.front %></div>
+<div><%= @card.back %></div>

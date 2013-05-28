@@ -1,8 +1,12 @@
 <%= link_to "Decks", decks_path %>
 <h2><%= @deck.name %></h2>
-<%= link_to "Add card", new_deck_card_path(@deck) %><br>
+<%= link_to "New card", new_deck_card_path(@deck) %><br>
+
 <% @cards.each do |card| %>
 	<div>
 		<%= link_to card.front, [@deck, card] %>
+		-
+		<%= link_to "Edit", edit_deck_card_path(@deck, card) %>
+		<%= link_to "Delete", [@deck, card], method: :delete, confirm: "Are you sure?" %>
 	</div>
 <% end %>

@@ -1,8 +1,5 @@
 <h2>Edit card</h2>
 <%= form_for([@deck, @card]) do |form| %>
-	<%= form.label :front, "Front" %>
-	<%= form.text_field :front %>
-	<%= form.label :back, "Back" %>
-	<%= form.text_field :back %>
-	<%= form.submit %>
+	<%= render 'form', form: form %>
+	<%= form.submit "Update card" %>
 <% end %>
