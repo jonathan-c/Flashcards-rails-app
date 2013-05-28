@@ -1,4 +1,5 @@
 <%= link_to "New deck", new_deck_path %>
+<%= link_to "Sign out", session_path, method: :delete %>
 <% @decks.each do |deck| %>
 	<div>
 		<%= link_to deck.name, deck_path(deck) %>

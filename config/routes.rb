@@ -1,4 +1,10 @@
 Flashy::Application.routes.draw do
+  
+  root to: "homes#index"
+
+  resource :session, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
+
   # get "/decks" => 'decks#index'
   # get "/decks/new" => 'decks#new'
   # get "/decks/:id" => 'decks#show', as: :deck

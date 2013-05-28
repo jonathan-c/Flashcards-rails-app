@@ -1,6 +1,8 @@
 class DecksController < ApplicationController
+  before_filter :authenticate
+  
   def index
-    @decks = Deck.all
+    @decks = current_user.decks
   end
   
   def show
@@ -34,4 +36,5 @@ class DecksController < ApplicationController
     @deck.destroy
     redirect_to decks_path
   end
+  
 end
