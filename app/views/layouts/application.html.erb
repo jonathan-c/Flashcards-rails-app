@@ -42,7 +42,20 @@
 		  <div class="masthead">
 		    <ul class="nav nav-pills pull-right">
 					<% if signed_in? %>
-		      <li class="active"><%= link_to "Sign out", session_path, method: :delete %></li>
+						<% if current_page? root_path %>
+						<li class=""><%= link_to "My decks", decks_path %></li>
+						<li class=""><%= link_to "Sign out", session_path, method: :delete %></li>
+						<% elsif current_page? decks_path %>
+					  <li class="active"><%= link_to "New Deck", new_deck_path %></li>
+						<li class=""><%= link_to "Sign out", session_path, method: :delete %></li>
+						<% elsif current_page? deck_path(@deck) %>
+						<li class="active"><%= link_to "View decks", decks_path %></li>
+						<li class="active"><%= link_to "Add card", new_deck_card_path(@deck) %></li>
+						<li class=""><%= link_to "Sign out", session_path, method: :delete %></li>
+						<% else %>
+						<li class="active"><%= link_to "Back to #{@deck.name}", deck_path(@deck) %></li>
+						<li class=""><%= link_to "Sign out", session_path, method: :delete %></li>
+						<% end %>
 					<% else %>
 		      <li><%= link_to "Sign in", new_session_path %></li>
 		      <li><%= link_to "Sign up", new_user_path %></li>

@@ -1,12 +1,14 @@
-<%= link_to "Decks", decks_path %>
-<h2><%= @deck.name %></h2>
-<%= link_to "New card", new_deck_card_path(@deck) %><br>
+<div class="offset1">
+<h2 class="lead"><%= @deck.name %></h2>
 
+<ol>
 <% @cards.each do |card| %>
-	<div>
+	<div><li>
 		<%= link_to card.front, [@deck, card] %>
 		-
-		<%= link_to "Edit", edit_deck_card_path(@deck, card) %>
-		<%= link_to "Delete", [@deck, card], method: :delete, confirm: "Are you sure?" %>
-	</div>
+		<i class="icon-pencil"><%= link_to "Edit", edit_deck_card_path(@deck, card) %></i>
+		&nbsp;&nbsp;<i class="icon-trash"><%= link_to "Delete", [@deck, card], method: :delete, confirm: "Are you sure?" %></i>
+	</li></div>
 <% end %>
+</div>
+</ol>

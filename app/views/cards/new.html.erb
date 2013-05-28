@@ -1,5 +1,7 @@
+<div class="offset1">
 <h2>Create a new card</h2>
 <%= form_for([@deck, @card]) do |form| %>
 <%= render 'form', form: form %>
-<%= form.submit "Create card" %>
+<%= form.submit "Create card", class: "btn-primary" %>
 <% end %>
+</div>

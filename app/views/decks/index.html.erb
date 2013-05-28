@@ -1,9 +1,11 @@
-<%= link_to "New deck", new_deck_path %>
+<ol>
 <% @decks.each do |deck| %>
-	<div>
-		<%= link_to deck.name, deck_path(deck) %>
-		-
-		<%= link_to "Edit", edit_deck_path(deck)%>
-		<%= link_to "Delete", deck_path(deck), method: :delete, :confirm => "Are you sure?" %>
+	<div class="offset1">
+		<li>
+			<%= link_to deck.name, deck_path(deck), class: "btn btn-primary" %>
+			<i class="icon-pencil"> <%= link_to "Edit", edit_deck_path(deck) %></i>
+			&nbsp;&nbsp;<i class="icon-trash"> <%= link_to "Delete", deck_path(deck), method: :delete, :confirm => "Are you sure?" %></i>
+		</li><br/>
 	</div>
 <% end %>
+</ol>

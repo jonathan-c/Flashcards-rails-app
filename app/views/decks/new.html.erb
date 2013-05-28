@@ -1,7 +1,6 @@
-<%= form_for(@deck) do |form| %>
-	<div>
-		<%= form.label :name %>
-		<%= form.text_field :name %>
-	</div>
-	<%= form.submit "Create deck" %>
+<div class="offset1">
+<%= form_for @deck, :html => { class: "form-inline" } do |form| %>
+	<%= form.text_field :name, placeholder: "Name" %>
+	<%= form.submit "Create deck", class: "btn-primary" %>
 <% end %>
+</div>

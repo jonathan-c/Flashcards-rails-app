@@ -23,4 +23,5 @@ class ApplicationController < ActionController::Base
     current_user
   end
   helper_method :signed_in?
+  
 end
