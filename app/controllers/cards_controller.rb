@@ -16,6 +16,8 @@ class CardsController < ApplicationController
   def show
     @deck = find_deck
     @card = find_card(@deck)
+    @next_card = find_next_card(@deck, @card)
+    @previous_card = find_previous_card(@deck, @card)
   end
   
   def edit
@@ -45,5 +47,13 @@ class CardsController < ApplicationController
     
     def find_card(deck)
       deck.cards.find(params[:id])
+    end
+    
+    def find_next_card(deck, card)
+      deck.cards[deck.cards.index(card) + 1 ]
+    end
+    
+    def find_previous_card(deck, card)
+      deck.cards[deck.cards.index(card) - 1 ]
     end
 end

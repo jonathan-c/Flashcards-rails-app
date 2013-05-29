@@ -19,9 +19,18 @@
 		<a class="close btn" data-dismiss="modal">Close</a>
   </div>
 </div>
-
-<a class="btn" data-toggle="modal" href="#myModal" >See Answer</a>
 </div>
+
+<div class="offset4">	
+	<% if !@previous_card.nil? %>
+	<a href="<%= deck_card_path(@deck, @previous_card)%>">Previous Card</a>
+	<% end %>
+<a class="btn" data-toggle="modal" href="#myModal" >See Answer</a>
+	<% if !@next_card.nil? %>
+	<a href="<%= deck_card_path(@deck, @next_card)%>">Next Card</a>
+	<% end %>
+</div>
+
 
 
 
