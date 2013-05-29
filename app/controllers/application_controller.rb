@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
     if cookies[:user_id]
       user_id = cookies.signed[:user_id]
       User.find_by_id(user_id)
+    else
+      User.find(session[:user_id]) if session[:user_id]
     end
   end
   helper_method :current_user

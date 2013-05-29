@@ -5,13 +5,13 @@ class DecksController < ApplicationController
     @decks = current_user.decks
   end
   
+  def new
+    @deck = current_user.decks.new
+  end
+  
   def show
     @deck = find_deck
     @cards = @deck.cards
-  end
-  
-  def new
-    @deck = current_user.decks.new
   end
   
   def create
