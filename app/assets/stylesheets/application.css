@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+
+
+.edit-delete [class^="icon-"] {
+	display: inline;
+}

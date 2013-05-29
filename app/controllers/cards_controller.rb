@@ -54,6 +54,11 @@ class CardsController < ApplicationController
     end
     
     def find_previous_card(deck, card)
-      deck.cards[deck.cards.index(card) - 1 ]
+      new_card = deck.cards[deck.cards.index(card) - 1 ]
+      if deck.cards.index(new_card) < 0
+        return nil
+      else
+        new_card
+      end
     end
 end

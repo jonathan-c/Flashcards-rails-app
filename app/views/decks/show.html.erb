@@ -10,10 +10,12 @@
 <% @cards.each do |card| %>
 	<div><li>
 		<%= link_to card.front, [@deck, card] %>
-		-
-		<i class="icon-pencil"><%= link_to "Edit", edit_deck_card_path(@deck, card) %></i>
-		&nbsp;&nbsp;<i class="icon-trash"><%= link_to "Delete", [@deck, card], method: :delete, confirm: "Are you sure?" %></i>
+		
+		<div class="edit-delete">
+		&nbsp;&nbsp;<i class="icon-pencil"> <%= link_to "Edit", edit_deck_card_path(@deck, card) %></i>
+		&nbsp;&nbsp;<i class="icon-trash"> <%= link_to "Delete", [@deck, card], method: :delete, confirm: "Are you sure?" %></i>
 	</li></div>
+		</div>
 <% end %>
 </div>
 </ol>
