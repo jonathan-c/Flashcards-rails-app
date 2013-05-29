@@ -45,8 +45,8 @@
 						<%= yield :nav %>
 						<li class=""><%= link_to "Sign out", session_path, method: :delete %></li>
 					<% else %>
-					<li><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
-					<li><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
+					<li><%= link_to "Login with Twitter", "/auth/twitter" %></li>
+					<li><%= link_to "Login with Facebook", "/auth/facebook" %></li>
 		      <!-- <li><%= link_to "Sign in", new_session_path %></li>
 		      <li><%= link_to "Sign up", new_user_path %></li> -->
 					<% end %>

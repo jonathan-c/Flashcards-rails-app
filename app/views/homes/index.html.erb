@@ -7,6 +7,7 @@
 			<% end %>
 		<a class="btn btn-large btn-success" href="<%= decks_path %>">View your decks</a>
 		<% else %>
-    <a class="btn btn-large btn-success" href="<%= new_user_path %>">Sign up today</a>
+    <a class="btn btn-large btn-info" href="<%= signin_path("twitter") %>">Login with Twitter</a>
+		<a class="btn btn-large btn-primary" href="<%= signin_path("facebook") %>">Login with Facebook</a>
 		<% end %>
  </div>
