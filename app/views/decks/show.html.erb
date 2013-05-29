@@ -1,3 +1,8 @@
+<% content_for :nav do %>
+	<li class="active"><%= link_to "View decks", decks_path %></li>
+	<li class="active"><%= link_to "Add card", new_deck_card_path(@deck) %></li>
+<% end %>
+
 <div class="offset1">
 <h2 class="lead"><%= @deck.name %></h2>
 
