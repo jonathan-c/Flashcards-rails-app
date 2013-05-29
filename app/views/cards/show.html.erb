@@ -1,8 +1,27 @@
 <div class="offset1">
 	<i class="icon-pencil"> <%= link_to "Edit card", edit_deck_card_path(@deck, @card) %></i>
 	<i class="icon-trash"> <%= link_to "Delete", deck_card_path(@deck, @card), method: :delete, :confirm => "Are you sure?" %></i>
-	
-	<br><br>
-	<div><%= @card.front %></div>
-	<div><%= @card.back %></div>
 </div>
+
+<div class="offset5">	
+	<br><br>
+	<div style="font-size: 42px;"><%= @card.front %></div><br>
+	
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3><%= @card.front %></h3>
+  </div>
+  <div class="modal-body">
+    <p><%= @card.back %></p>
+  </div>
+  <div class="modal-footer">
+		<a class="close btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
+
+<a class="btn" data-toggle="modal" href="#myModal" >See Answer</a>
+</div>
+
+
+
