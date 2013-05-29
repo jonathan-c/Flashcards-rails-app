@@ -4,18 +4,17 @@
 <% end %>
 
 <div class="offset1">
-<h2 class="lead"><%= @deck.name %></h2>
+	<h2 class="lead"><%= @deck.name %></h2>
 
-<ol>
-<% @cards.each do |card| %>
-	<div><li>
-		<%= link_to card.front, [@deck, card] %>
-		
-		<div class="edit-delete">
-		&nbsp;&nbsp;<i class="icon-pencil"> <%= link_to "Edit", edit_deck_card_path(@deck, card) %></i>
-		&nbsp;&nbsp;<i class="icon-trash"> <%= link_to "Delete", [@deck, card], method: :delete, confirm: "Are you sure?" %></i>
-	</li></div>
-		</div>
-<% end %>
+	<ol>
+	<% @cards.each do |card| %>
+			<li>
+				<div class="edit-delete">
+				<%= link_to card.front, [@deck, card] %>
+					&nbsp;&nbsp;<i class="icon-pencil"> <%= link_to "Edit", edit_deck_card_path(@deck, card) %></i>
+					&nbsp;&nbsp;<i class="icon-trash"> <%= link_to "Delete", [@deck, card], method: :delete, confirm: "Are you sure?" %></i>
+				</div>
+			</li>
+	<% end %>
+	</ol>
 </div>
-</ol>

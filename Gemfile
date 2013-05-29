@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem "twitter-bootstrap-rails"
 gem 'omniauth-twitter'
 gem 'omniauth'
+gem 'will_paginate', '~> 3.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

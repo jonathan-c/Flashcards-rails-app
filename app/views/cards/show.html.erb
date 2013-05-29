@@ -3,33 +3,27 @@
 	&nbsp;&nbsp;<i class="icon-trash"> <%= link_to "Delete", deck_card_path(@deck, @card), method: :delete, :confirm => "Are you sure?" %></i>
 </div>
 
-<div class="offset4">	
+<div class="card-show">	
 	<br><br>
-	<div style="font-size: 42px;"><%= @card.front %></div><br>
+	<div style="font-size: 42px;"><%= @cards[0].front %></div><br>
 	
-<div class="modal hide fade" id="myModal">
-  <div class="modal-header">
-    <a class="close" data-dismiss="modal">×</a>
-    <h3><%= @card.front %></h3>
-  </div>
-  <div class="modal-body">
-    <p><%= @card.back %></p>
-  </div>
-  <div class="modal-footer">
-		<a class="close btn" data-dismiss="modal">Close</a>
-  </div>
-</div>
+	<div class="modal hide fade" id="myModal">
+	  <div class="modal-header">
+	    <a class="close" data-dismiss="modal">×</a>
+	    <h3><%= @cards[0].front %></h3>
+	  </div>
+	  <div class="modal-body">
+	    <p><%= @cards[0].back %></p>
+	  </div>
+	  <div class="modal-footer">
+			<a class="close btn" data-dismiss="modal">Close</a>
+	  </div>
+	</div>
+
+	<a class="btn-primary btn" data-toggle="modal" href="#myModal" >See Answer</a>
+	<%= will_paginate @cards %>
 </div>
 
-<div class="offset4">	
-	<% if !@previous_card.nil? %>
-	<a href="<%= deck_card_path(@deck, @previous_card)%>">Previous Card</a>
-	<% end %>
-<a class="btn" data-toggle="modal" href="#myModal" >See Answer</a>
-	<% if !@next_card.nil? %>
-	<a href="<%= deck_card_path(@deck, @next_card)%>">Next Card</a>
-	<% end %>
-</div>
 
 
 

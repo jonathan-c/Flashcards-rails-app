@@ -17,3 +17,6 @@
 .edit-delete [class^="icon-"] {
 	display: inline;
 }
+
+.jumbotron { text-align: center;}
+

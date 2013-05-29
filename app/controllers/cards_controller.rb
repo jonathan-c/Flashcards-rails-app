@@ -16,8 +16,7 @@ class CardsController < ApplicationController
   def show
     @deck = find_deck
     @card = find_card(@deck)
-    @next_card = find_next_card(@deck, @card)
-    @previous_card = find_previous_card(@deck, @card)
+    @cards = @deck.cards.paginate(:page => params[:page], :per_page => 1)
   end
   
   def edit
@@ -47,18 +46,5 @@ class CardsController < ApplicationController
     
     def find_card(deck)
       deck.cards.find(params[:id])
-    end
-    
-    def find_next_card(deck, card)
-      deck.cards[deck.cards.index(card) + 1 ]
-    end
-    
-    def find_previous_card(deck, card)
-      new_card = deck.cards[deck.cards.index(card) - 1 ]
-      if deck.cards.index(new_card) < 0
-        return nil
-      else
-        new_card
-      end
     end
 end
