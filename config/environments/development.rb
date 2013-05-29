@@ -1,5 +1,9 @@
 Flashy::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  
+  # Facebook app information
+  config.fb_app_id = '517661271629948' 
+  config.fb_app_secret = 'ef3cdb5c0a80b16de7cfb335a68b0850'
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
