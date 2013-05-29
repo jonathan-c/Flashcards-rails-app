@@ -4,6 +4,8 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 gem "twitter-bootstrap-rails"
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'certified'
 gem 'omniauth'
 gem 'will_paginate', '~> 3.0'
 
