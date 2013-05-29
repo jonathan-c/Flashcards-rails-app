@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'sqlite3'
 gem "twitter-bootstrap-rails"
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
@@ -18,6 +17,11 @@ end
 group :development do
 	gem 'debugger'
 	gem 'annotate'
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
 end
 
 gem 'jquery-rails'
