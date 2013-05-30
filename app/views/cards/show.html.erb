@@ -4,8 +4,8 @@
 
 <div class="offset1">
 	You're currently studying the <a href="<%= deck_path(@deck) %>"><b><%= @deck.name %></b></a> deck.<br><br>
-	<i class="icon-pencil"> <%= link_to "Edit card", edit_deck_card_path(@deck, @card) %></i>
-	&nbsp;&nbsp;<i class="icon-trash"> <%= link_to "Delete", deck_card_path(@deck, @card), method: :delete, :confirm => "Are you sure?" %></i>
+	<i class="icon-pencil"> <%= link_to "Edit card", edit_deck_card_path(@deck, @cards[0]) %></i>
+	&nbsp;&nbsp;<i class="icon-trash"> <%= link_to "Delete", deck_card_path(@deck, @cards[0]), method: :delete, :confirm => "Are you sure?" %></i>
 </div>
 
 <div class="card-show">	
