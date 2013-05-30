@@ -1,4 +1,14 @@
 <div class="offset1">
+	
+	<% if flash[:alert] %>
+		<% flash[:alert].each do |i| %>
+		<div class="alert alert-error">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<%= i %>
+		</div>
+		<% end %>
+	<% end %>
+	
 <%= form_for @deck, :html => { class: "form-inline" } do |form| %>
 	<%= form.text_field :name, placeholder: "Name" %>
 	<%= form.submit "Create deck", class: "btn-primary" %>

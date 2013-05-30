@@ -6,9 +6,10 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
-
-
-
 .logo {
 	color: black;
+}
+
+.alert-danger, .alert-error {
+	width: 500px;
 }

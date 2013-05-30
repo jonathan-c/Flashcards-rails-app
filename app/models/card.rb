@@ -13,4 +13,6 @@
 class Card < ActiveRecord::Base
   belongs_to :deck
   attr_accessible :back, :front
+  validates_presence_of :front, :message => "of the card cannot be empty."
+  validates_presence_of :back, :message => "of the card cannot be empty."
 end

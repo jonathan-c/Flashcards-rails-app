@@ -1,7 +1,17 @@
 <div class="offset1">
-<h2>Create a new card</h2>
-<%= form_for([@deck, @card]) do |form| %>
-<%= render 'form', form: form %>
-<%= form.submit "Create card", class: "btn-primary" %>
-<% end %>
+	
+	<% if flash[:alert] %>
+		<% flash[:alert].each do |i| %>
+		<div class="alert alert-error">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<%= i %>
+		</div>
+		<% end %>
+	<% end %>
+	
+	<h2>Create a new card</h2>
+	<%= form_for([@deck, @card]) do |form| %>
+	<%= render 'form', form: form %>
+	<%= form.submit "Create card", class: "btn-primary" %>
+	<% end %> 
 </div>

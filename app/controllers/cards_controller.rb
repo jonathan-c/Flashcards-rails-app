@@ -10,7 +10,12 @@ class CardsController < ApplicationController
     @deck = find_deck
     @card = @deck.cards.new(params[:card])
     @card.save
-    redirect_to deck_path(@deck)
+    if @card.save
+      redirect_to deck_path(@deck)
+    else
+      flash[:alert] = @card.errors.full_messages
+      redirect_to new_deck_card_path            
+    end
   end
   
   def show

@@ -17,7 +17,12 @@ class DecksController < ApplicationController
   def create
     @deck = current_user.decks.new(params[:deck])
     @deck.save
-    redirect_to deck_path(@deck)
+    if @deck.save
+      redirect_to deck_path(@deck)
+    else
+      flash[:alert] = @deck.errors.full_messages
+      redirect_to new_deck_path
+    end
   end
   
   def edit
