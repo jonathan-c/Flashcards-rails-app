@@ -45,13 +45,11 @@
 						<%= yield :nav %>
 						<li class=""><%= link_to "Sign out", session_path, method: :delete %></li>
 					<% else %>
-					<li><%= link_to "Login with Twitter", "/auth/twitter" %></li>
-					<li><%= link_to "Login with Facebook", "/auth/facebook" %></li>
 		      <!-- <li><%= link_to "Sign in", new_session_path %></li>
 		      <li><%= link_to "Sign up", new_user_path %></li> -->
 					<% end %>
 		    </ul>
-		    <a href="<%= root_path %>"><h3 class="muted offset1">Flashy</h3></a>
+		    <a href="<%= root_path %>"><h3 class="muted logo offset1">Flashy</h3></a>
 		  </div>
 
 		  <hr>

@@ -20,3 +20,8 @@
 
 .jumbotron { text-align: center;}
 
+div.deck-name {
+	display: inline-block;
+}
+
+

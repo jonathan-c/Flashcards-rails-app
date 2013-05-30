@@ -4,7 +4,9 @@
 <% end %>
 
 <div class="offset1">
-	<h2 class="lead"><%= @deck.name %></h2>
+	<!-- <div class="deck-name"> -->
+		<h2 class="lead"><%= @deck.name %></h2><!-- <i class="icon-plus"> <%= link_to "Add card", new_deck_card_path(@deck) %></i>
+			</div> -->
 
 	<ol>
 	<% @cards.each do |card| %>
