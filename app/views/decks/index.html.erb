@@ -1,6 +1,4 @@
-<% content_for :nav do %>
-	<li class="active"><%= link_to "New Deck", new_deck_path %></li>
-<% end %>
+<i class="icon-plus offset1"> <%= link_to "New deck", new_deck_path %></i><br/><br/>
 
 <ol>
 <% @decks.each do |deck| %>

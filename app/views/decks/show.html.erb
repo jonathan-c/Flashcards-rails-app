@@ -1,12 +1,12 @@
 <% content_for :nav do %>
-	<li class="active"><%= link_to "View decks", decks_path %></li>
-	<li class="active"><%= link_to "Add card", new_deck_card_path(@deck) %></li>
+	<li class="active"><%= link_to "Decks", decks_path %></li>
 <% end %>
 
 <div class="offset1">
-	<!-- <div class="deck-name"> -->
-		<h2 class="lead"><%= @deck.name %></h2><!-- <i class="icon-plus"> <%= link_to "Add card", new_deck_card_path(@deck) %></i>
-			</div> -->
+	 <div class="deck-name"> 
+		<i class="icon-plus"> <%= link_to "Add card", new_deck_card_path(@deck) %></i>
+		<h2 class="lead"><%= @deck.name %></h2>
+	 </div> 
 
 	<ol>
 	<% @cards.each do |card| %>
