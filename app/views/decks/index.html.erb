@@ -4,9 +4,11 @@
 <% @decks.each do |deck| %>
 	<div class="offset1">
 		<li>
+			<div class="edit-delete">
 			<%= link_to deck.name, deck_path(deck), class: "btn btn-primary" %>
 			<i class="icon-pencil"> <%= link_to "Edit", edit_deck_path(deck) %></i>
 			&nbsp;&nbsp;<i class="icon-trash"> <%= link_to "Delete", deck_path(deck), method: :delete, :confirm => "Are you sure?" %></i>
+			</div>
 		</li><br/>
 	</div>
 <% end %>
